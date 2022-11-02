@@ -15,7 +15,7 @@ public class Lift {
 
     public void up() {
         telemetry.addLine("Lift Motor Up");
-        liftMotor.setPower(0.5);
+        liftMotor.setPower(1);
 
     }
 
