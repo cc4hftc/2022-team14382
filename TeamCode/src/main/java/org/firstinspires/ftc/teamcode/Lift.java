@@ -13,15 +13,10 @@ public class Lift {
         this.liftMotor = liftMotor;
     }
 
-    public void up() {
+    public void setPower(double power) {
         telemetry.addLine("Lift Motor Up");
-        liftMotor.setPower(1);
+        liftMotor.setPower(power);
 
-    }
-
-    public void down() {
-        telemetry.addLine("Lift Motor Down");
-        liftMotor.setPower(-0.5);
     }
 
     public void stop() {

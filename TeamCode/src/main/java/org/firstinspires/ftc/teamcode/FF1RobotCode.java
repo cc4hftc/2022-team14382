@@ -105,14 +105,10 @@ public class FF1RobotCode extends LinearOpMode {
             double axial = -gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
             double lateral = gamepad1.left_stick_x;
             double yaw = gamepad1.right_stick_x;
-            if (gamepad1.b == true) {
-                lift.up();
-            } else if (gamepad1.a == true) {
-                lift.down();
-            } else {
-                lift.stop();
-            }
 
+            double lift_power = -gamepad2.left_stick_y;
+            lift.setPower(lift_power);
+            
 
             if(gamepad1.left_bumper==true){
                 grabber.hold();
