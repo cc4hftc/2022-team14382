@@ -108,7 +108,7 @@ public class FF1RobotCode extends LinearOpMode {
 
             double lift_power = -gamepad2.left_stick_y;
             lift.setPower(lift_power);
-            
+
 
             if(gamepad1.left_bumper==true){
                 grabber.hold();

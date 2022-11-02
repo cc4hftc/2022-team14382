@@ -15,9 +15,19 @@ public class Lift {
 
     public void setPower(double power) {
         telemetry.addLine("Lift Motor Up");
-        liftMotor.setPower(power);
 
+        liftMotor.setPower(squareIt(power));
     }
+
+    public double squareIt(double input) {
+        double sign = Math.signum(input);
+        if (sign > 0) {
+            return input * input;
+        } else {
+            return -(input * input);
+        }
+    }
+
 
     public void stop() {
         liftMotor.setPower(0);
