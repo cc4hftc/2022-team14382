@@ -14,9 +14,9 @@ public class Lift {
     }
 
     public void setPower(double power) {
-        telemetry.addLine("Lift Motor Up");
-
-        liftMotor.setPower(squareIt(power));
+        double sp = squareIt(power);
+        telemetry.addData("Set Lift Power", "%4.2f",sp );
+        liftMotor.setPower(sp);
     }
 
     public double squareIt(double input) {
