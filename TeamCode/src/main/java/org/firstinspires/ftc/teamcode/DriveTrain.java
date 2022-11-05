@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
@@ -34,9 +35,9 @@ public class DriveTrain {
         // Reverse the direction (flip FORWARD <-> REVERSE ) of any wheel that runs backward
         // Keep testing until ALL the wheels move the robot forward when you push the left joystick forward.
         this.leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
-        this.leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
+        this.leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
         this.rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
-        this.rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
+        this.rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
     }
 
