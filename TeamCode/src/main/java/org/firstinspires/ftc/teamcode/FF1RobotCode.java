@@ -115,7 +115,10 @@ public class FF1RobotCode extends LinearOpMode {
 
             }else if (gamepad2.right_bumper==true){
                 grabber.drop();
+            } else {
+                grabber.idle();
             }
+
 
 
                 driveTrain.setPower(axial, lateral, yaw);

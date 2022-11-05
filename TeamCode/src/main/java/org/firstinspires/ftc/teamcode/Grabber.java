@@ -14,12 +14,20 @@ public class Grabber {
     }
 
     public void hold() {
-        telemetry.addLine("Open Grabber");
-        servo.setPosition(0.5);
+        setPosition(0.5);
     }
+
     public void drop() {
-        telemetry.addLine("Close Grabber");
-        servo.setPosition(-0.5);
+        setPosition(-0.5);
+    }
+
+    public void idle() {
+        telemetry.addData("Grabber Pos ", "idle");
+    }
+
+    private void setPosition(double pos) {
+        telemetry.addData("Grabber Pos ", "%4.2f",pos );
+        servo.setPosition(pos);
     }
 
 }
