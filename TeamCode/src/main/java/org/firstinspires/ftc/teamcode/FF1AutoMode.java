@@ -102,7 +102,7 @@ public class FF1AutoMode extends LinearOpMode {
                 driveTrain.setPower(0,0,0);
             } else {
                 driveTrain.setPower(1,0,0);
-            } 
+            }
 
 
 

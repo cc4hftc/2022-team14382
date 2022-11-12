@@ -14,15 +14,15 @@ public class Grabber {
     }
 
     public void hold() {
-        setPosition(0.5);
+        setPosition(0);
     }
 
     public void drop() {
-        setPosition(-0.5);
+        setPosition(1);
     }
 
     public void idle() {
-        telemetry.addData("Grabber Pos ", "idle");
+        telemetry.addData("Grabber Pos ", "idle" );
     }
 
     private void setPosition(double pos) {

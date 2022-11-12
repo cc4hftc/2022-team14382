@@ -11,6 +11,7 @@ public class Lift {
     public Lift(Telemetry telemetry, DcMotor liftMotor) {
         this.telemetry = telemetry;
         this.liftMotor = liftMotor;
+        this.liftMotor.setDirection(DcMotor.Direction.REVERSE);
     }
 
     public void setPower(double power) {

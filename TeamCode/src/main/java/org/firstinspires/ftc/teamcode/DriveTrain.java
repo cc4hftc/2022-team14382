@@ -34,9 +34,9 @@ public class DriveTrain {
         // when you first test your robot, push the left joystick forward and observe the direction the wheels turn.
         // Reverse the direction (flip FORWARD <-> REVERSE ) of any wheel that runs backward
         // Keep testing until ALL the wheels move the robot forward when you push the left joystick forward.
-        this.leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
+        this.leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
         this.leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
-        this.rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
+        this.rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         this.rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
     }
