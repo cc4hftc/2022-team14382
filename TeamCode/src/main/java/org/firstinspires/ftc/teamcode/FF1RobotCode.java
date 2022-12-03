@@ -103,9 +103,15 @@ public class FF1RobotCode extends LinearOpMode {
 
 
             // POV Mode uses left joystick to go forward & strafe, and right joystick to rotate.
-            double axial = -gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
+            //double multiplier = gamepad1.left_trigger;
+
+            double axial = -1*gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
             double lateral = gamepad1.left_stick_x;
             double yaw = gamepad1.right_stick_x;
+
+
+
+
 
             double lift_power = -gamepad2.left_stick_y;
             lift.setPower(lift_power);
@@ -119,10 +125,14 @@ public class FF1RobotCode extends LinearOpMode {
             } else {
                 grabber.idle();
             }
+            double multiplier = 1;
+            if(gamepad1.left_bumper==true){
+                multiplier = 0.5;
+            }
 
 
 
-                driveTrain.setPower(axial, lateral, yaw);
+                driveTrain.setPower(multiplier * axial, multiplier*lateral, multiplier*yaw);
 
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.update();
