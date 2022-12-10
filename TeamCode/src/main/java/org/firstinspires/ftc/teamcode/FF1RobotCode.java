@@ -118,16 +118,13 @@ public class FF1RobotCode extends LinearOpMode {
 
 
             if(gamepad2.left_bumper==true){
-                grabber.hold();
+                grabber.close();
 
             }else if (gamepad2.right_bumper==true){
-                grabber.drop();
-            } else {
-                grabber.idle();
-            }
+                grabber.open();
             double multiplier = 1;
             if(gamepad1.left_bumper==true){
-                multiplier = 0.5;
+                multiplier = 0.5;bvv
             }
 
 

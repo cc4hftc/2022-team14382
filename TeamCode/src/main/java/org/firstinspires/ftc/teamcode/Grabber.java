@@ -13,22 +13,17 @@ public class Grabber {
         this.servo = servo;
     }
 
-    public void hold() {
-        setPosition(0.25);
+    public void close() {
+        setPosition(0);
     }
 
-    public void drop() {
-        setPosition(0.75);
+    public void open() {
+        setPosition(60);
     }
 
-    public void idle() {
-        setPosition(0.5);
-        telemetry.addData("Grabber Pos ", "idle" );
-    }
-
-    private void setPosition(double pos) {
-        telemetry.addData("Grabber Pos ", "%4.2f",pos );
-        servo.setPosition(pos);
+    private void setPosition(double position) {
+        telemetry.addData("Grabber Pos ", "%4.2f",position );
+        servo.setPosition(position);
     }
 
 }
