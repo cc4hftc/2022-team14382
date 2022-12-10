@@ -120,16 +120,15 @@ public class FF1RobotCode extends LinearOpMode {
             if(gamepad2.left_bumper==true){
                 grabber.close();
 
-            }else if (gamepad2.right_bumper==true){
+            }else if (gamepad2.right_bumper==true) {
                 grabber.open();
+            }
             double multiplier = 1;
             if(gamepad1.left_bumper==true){
-                multiplier = 0.5;bvv
+                multiplier = 0.5;
             }
 
-
-
-                driveTrain.setPower(multiplier * axial, multiplier*lateral, multiplier*yaw);
+             driveTrain.setPower(multiplier * axial, multiplier*lateral, multiplier*yaw);
 
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.update();
