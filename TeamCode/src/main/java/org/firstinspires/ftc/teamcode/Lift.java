@@ -12,14 +12,15 @@ public class Lift {
         this.telemetry = telemetry;
         this.liftMotor = liftMotor;
         this.liftMotor.setDirection(DcMotor.Direction.REVERSE);
-        this.liftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        this.liftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        this.liftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//        this.liftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        this.liftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
     }
 
     public void setPower(double power) {
         int cp = liftMotor.getCurrentPosition();
-        double sp = squareIt(power);
+        double sp = squareIt(power)/2;
         telemetry.addData("Set Lift Power", "%4.2f",sp );
         telemetry.addData("Lift Motor Pos", "%7d",cp );
         liftMotor.setPower(sp);

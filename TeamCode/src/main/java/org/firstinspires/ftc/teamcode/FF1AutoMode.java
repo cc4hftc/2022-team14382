@@ -32,9 +32,13 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -69,6 +73,8 @@ public class FF1AutoMode extends LinearOpMode {
     private DriveTrain driveTrain = null;
     private Lift lift=null;
     private Grabber grabber=null;
+    private ColorSensor colorSensor=null;
+    private DistanceSensor distanceSensor= null;
 
 
 
@@ -94,7 +100,8 @@ public class FF1AutoMode extends LinearOpMode {
         double drivestart = runtime.seconds();
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-
+        colorSensor=hardwareMap.get(ColorSensor.class,"sensor_color");
+        distanceSensor=hardwareMap.get(DistanceSensor.class, "sensor_color");
             double elaspedDrivingTime = runtime.seconds() - drivestart;
 
 
@@ -102,8 +109,7 @@ public class FF1AutoMode extends LinearOpMode {
                 driveTrain.setPower(0,0,0);
             } else {
                 driveTrain.setPower(1,0,0);
-            }
-
+            }     
 
 
 
